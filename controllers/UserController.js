@@ -98,12 +98,13 @@ exports.loginUser = async (req, res) => {
     if(!isPasswordMatched) {
         return res.status(200).json({
             success: false,
-            message: 'Password not matched'
+            message: 'Password not matched',
         });
     }
     return res.status(200).json({
         success: true,
-        message: 'User logged in successfully'
+        message: 'User logged in successfully',
+        user: user
     });
     } catch (error) {
         return res.status(500).json({
